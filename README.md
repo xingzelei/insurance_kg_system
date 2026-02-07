@@ -16,15 +16,15 @@
    pip install -r requirements.txt
    ```
 
-2. **构建知识图谱**
-   从原始数据抽取并构建图谱：
+2. **构建知识图谱（可选）**
+   
+   项目已包含预生成的图谱数据 (`data/processed/kg.pkl`)，您可以直接跳到下一步。
+   
+   如果您修改了原始数据或希望重新生成图谱，请运行：
    ```bash
-   cd src/kg_construction
-   # 注意：需要确保在该目录下运行，或者调整脚本中的路径
-   # 建议在根目录下运行模块:
    python -m src.kg_construction.graph_builder
    ```
-   这将生成 `data/processed/kg.pkl` (用于本地 Python 演示) 和 `data/processed/import.cypher` (用于导入 Neo4j)。
+   这将更新 `data/processed/kg.pkl` 和 `data/processed/import.cypher`。
 
 3. **启动问答系统**
    ```bash
